@@ -1,7 +1,7 @@
 layout: page
 title: "https://lab-cpl.github.io"
 permalink: /techical_check
-theme: minima
+theme: cayman
 
 # Header
 
