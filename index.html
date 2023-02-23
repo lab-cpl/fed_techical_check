@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Luis Luarte" />
+<meta name="author" content="NBO lab" />
 
 <meta name="date" content="2023-02-22" />
 
-<title>index</title>
+<title>Fed techinal check</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1373,23 +1373,17 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before {
-content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "";
-border: none;
-}
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "";
+content: "\e258";
 font-family: 'Glyphicons Halflings';
-display: inline-block;
-padding: 10px;
-border-right: 1px solid #ddd;
+border: none;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -1491,28 +1485,110 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">index</h1>
-<h4 class="author">Luis Luarte</h4>
+<h1 class="title toc-ignore">Fed techinal check</h1>
+<h4 class="author">NBO lab</h4>
 <h4 class="date">2023-02-22</h4>
 
 </div>
 
 
-<div id="this" class="section level1">
-<h1>this</h1>
-<div id="is" class="section level2">
-<h2>is</h2>
-<div id="a-test" class="section level3">
-<h3>a test</h3>
+<div id="battery" class="section level1">
+<h1>Battery</h1>
+<div id="testing-battery-capacity" class="section level2">
+<h2>Testing battery capacity</h2>
+<div id="battery-is-below-expected-capacity" class="section level3">
+<h3>Battery is below expected capacity</h3>
+</div>
+<div id="battery-is-at-or-above-expected-capacity" class="section level3">
+<h3>Battery is at or above expected capacity</h3>
 </div>
 </div>
 </div>
-<div id="this-one" class="section level1">
-<h1>this one</h1>
-<div id="too" class="section level2">
-<h2>too</h2>
-<div id="is-a-test" class="section level3">
-<h3>is a test</h3>
+<div id="motor" class="section level1">
+<h1>Motor</h1>
+<div id="testing-rpm-or-motor-turns-per-seconds" class="section level2">
+<h2>Testing RPM or motor turns per seconds</h2>
+<div id="motor-turns-slower-than-expected" class="section level3">
+<h3>Motor turns slower than expected</h3>
+</div>
+<div id="motor-turns-at-proper-speed" class="section level3">
+<h3>Motor turns at proper speed</h3>
+</div>
+</div>
+<div id="checking-m1-and-m2-connectivity" class="section level2">
+<h2>Checking M1 and M2 connectivity</h2>
+<div id="multimeter-outputs-no-signal" class="section level3">
+<h3>Multimeter outputs no signal</h3>
+</div>
+<div id="multimeter-signals-correct-connectivity" class="section level3">
+<h3>Multimeter signals correct connectivity</h3>
+</div>
+</div>
+<div id="checking-feather-m0-to-motor-shield-power-relay" class="section level2">
+<h2>Checking Feather M0 to motor shield power relay</h2>
+</div>
+</div>
+<div id="infrared-sensor" class="section level1">
+<h1>Infrared sensor</h1>
+<div id="checking-sensor-detection-area" class="section level2">
+<h2>Checking sensor detection area</h2>
+<div id="sensor-detection-area-is-less-than-expected-or-nonexistent" class="section level3">
+<h3>Sensor detection area is less than expected (or nonexistent)</h3>
+</div>
+<div id="sensor-detection-area-is-as-expected" class="section level3">
+<h3>Sensor detection area is as expected</h3>
+</div>
+</div>
+<div id="checking-sensor-digital-signal" class="section level2">
+<h2>Checking sensor digital signal</h2>
+<div id="there-is-no-digital-signal-present" class="section level3">
+<h3>There is no digital signal present</h3>
+<p>See <a href="#Checkingsignalwire">Checking signal wire</a></p>
+</div>
+<div id="digital-signal-output-is-as-expected" class="section level3">
+<h3>Digital signal output is as expected</h3>
+</div>
+</div>
+<div id="checking-sensor-resistance" class="section level2">
+<h2>Checking sensor resistance</h2>
+<div id="resistance-is-damaged-or-resistance-lectures-are-not-expected" class="section level3">
+<h3>Resistance is damaged or resistance lectures are not expected</h3>
+</div>
+</div>
+</div>
+<div id="Checkingsignalwire" class="section level1">
+<h1>Checking signal wire</h1>
+<div id="signal-wire-is-unsoldered-or-damaged" class="section level2">
+<h2>Signal wire is unsoldered or damaged</h2>
+</div>
+<div id="signal-wire-is-properly-connected-resolder-or-replaced" class="section level2">
+<h2>Signal wire is properly connected, resolder or replaced</h2>
+</div>
+</div>
+<div id="d-parts-integrity" class="section level1">
+<h1>3D parts integrity</h1>
+<div id="comparing-3d-parts-against-original-stl-file" class="section level2">
+<h2>Comparing 3D parts against original STL file</h2>
+<div id="parts-are-damaged-or-not-similar-to-stl-file" class="section level3">
+<h3>Parts are damaged or not similar to STL file</h3>
+</div>
+<div id="parts-are-as-expected" class="section level3">
+<h3>Parts are as expected</h3>
+<p>See <a href="#Pelletdeliverystresstest">Pellet delivery stress
+test</a></p>
+</div>
+</div>
+</div>
+<div id="Pelletdeliverystresstest" class="section level1">
+<h1>Pellet delivery stress test</h1>
+<div id="unloading-full-silo" class="section level2">
+<h2>Unloading full silo</h2>
+<div id="unloading-presents-errors" class="section level3">
+<h3>Unloading presents errors</h3>
+</div>
+<div id="unloading-goes-as-expected" class="section level3">
+<h3>Unloading goes as expected</h3>
+<p>FED is succesfuly tested, and present no errors.</p>
 </div>
 </div>
 </div>

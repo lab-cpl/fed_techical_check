@@ -1,6 +1,6 @@
 ---
-title: "index"
-author: "Luis Luarte"
+title: "Fed techinal check"
+author: "NBO lab"
 date: '2023-02-22'
 output: 
     html_document:
@@ -11,14 +11,77 @@ output:
         toc_float: yes
 ---
 
-# this
+# Battery
 
-## is
+## Testing battery capacity
 
-### a test
+### Battery is below expected capacity
 
-# this one
+### Battery is at or above expected capacity
 
-## too 
 
-### is a test
+# Motor
+
+## Testing RPM or motor turns per seconds
+
+### Motor turns slower than expected
+
+### Motor turns at proper speed
+
+## Checking M1 and M2 connectivity
+
+### Multimeter outputs no signal
+
+### Multimeter signals correct connectivity
+
+## Checking Feather M0 to motor shield power relay
+
+
+# Infrared sensor
+
+## Checking sensor detection area
+
+### Sensor detection area is less than expected (or nonexistent)
+
+### Sensor detection area is as expected
+
+## Checking sensor digital signal
+
+### There is no digital signal present
+
+See [Checking signal wire](#Checkingsignalwire)
+
+### Digital signal output is as expected
+
+## Checking sensor resistance
+
+### Resistance is damaged or resistance lectures are not expected
+
+# Checking signal wire {#Checkingsignalwire}
+
+## Signal wire is unsoldered or damaged
+
+## Signal wire is properly connected, resolder or replaced
+
+
+# 3D parts integrity
+
+## Comparing 3D parts against original STL file
+
+### Parts are damaged or not similar to STL file
+
+### Parts are as expected
+
+See [Pellet delivery stress test](#Pelletdeliverystresstest)
+
+
+# Pellet delivery stress test {#Pelletdeliverystresstest}
+
+## Unloading full silo
+
+### Unloading presents errors
+
+### Unloading goes as expected
+
+FED is succesfuly tested, and present no errors.
+
