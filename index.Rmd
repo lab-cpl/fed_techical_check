@@ -11,7 +11,15 @@ output:
         toc_float: yes
 ---
 
-# Battery
+# Bateria
+
+Para revisar la bateria se debe tener:
+
+1. La planilla de *ciclos de carga de la bateria*
+2. El script *fed_batt_test.ino*
+3. El script *fed_batt_analysis.R*
+
+
 
 ## Testing battery capacity
 
