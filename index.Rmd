@@ -13,19 +13,27 @@ output:
 
 # Bateria
 
-Para revisar la bateria se debe tener:
+La revision de la bateria consiste en dejar el FED con su respectiva bateria corriendo el programa ~/fed_techical_check/scripts/testing/battery_test. Una vez cargado el programa debes dejar andando por 24 horas. El programa hace girar el disco del FED y toma muestras del nivel de bateria cada 1 segundo. Esto queda guardado en la microsd. Una vez terminadas las 24 horas debes ir a fed_techical_check/scripts/analysis y buscar el script fed_batt_analysis.R
 
-1. La planilla de *ciclos de carga de la bateria*
-2. El script *fed_batt_test.ino*
-3. El script *fed_batt_analysis.R*
+## Testeando la capacidad de la bateria
 
+1. Abre la tarjeta microsd en tu computador y entra al archivo config.txt y modifica el parametro randomFeed, para el testeo de bateria pon el numero '99' sin las comillas  y guarda el archivo
 
+2. Carga el programa battery_test ocupando platformio, si estas desde la terminal ocupa el codigo 'pio run -d ~/fed_techical_check/scripts/testing/battery_test -t upload' asegurandone de tener el FED conectado y con la bateria
 
-## Testing battery capacity
+3. Espera 24 horas para desconectar la bateria y remover la tarjeta microsd
 
-### Battery is below expected capacity
+4. Realiza una copia del archivo [numero fed].CSV en tu escritorio
+
+5. Abre el script fed_batt_analysis.R y sigue las instrucciones que hay dentro
+
+### Si la bateria esta por debajo de la capacidad esperada
+
+Marca la bateria indicando la fecha del test y el ultimo voltaje registrado.
 
 ### Battery is at or above expected capacity
+
+Recarga la bateria para utilizarla posteriormente.
 
 
 # Motor
