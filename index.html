@@ -1373,17 +1373,23 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+content: "";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "\e258";
-font-family: 'Glyphicons Halflings';
+content: "";
 border: none;
+}
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "";
+font-family: 'Glyphicons Halflings';
+display: inline-block;
+padding: 10px;
+border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -1492,15 +1498,41 @@ border-radius: 0px;
 </div>
 
 
-<div id="battery" class="section level1">
-<h1>Battery</h1>
-<div id="testing-battery-capacity" class="section level2">
-<h2>Testing battery capacity</h2>
-<div id="battery-is-below-expected-capacity" class="section level3">
-<h3>Battery is below expected capacity</h3>
+<div id="bateria" class="section level1">
+<h1>Bateria</h1>
+<p>La revision de la bateria consiste en dejar el FED con su respectiva
+bateria corriendo el programa
+~/fed_techical_check/scripts/testing/battery_test. Una vez cargado el
+programa debes dejar andando por 24 horas. El programa hace girar el
+disco del FED y toma muestras del nivel de bateria cada 1 segundo. Esto
+queda guardado en la microsd. Una vez terminadas las 24 horas debes ir a
+fed_techical_check/scripts/analysis y buscar el script
+fed_batt_analysis.R</p>
+<div id="testeando-la-capacidad-de-la-bateria" class="section level2">
+<h2>Testeando la capacidad de la bateria</h2>
+<ol style="list-style-type: decimal">
+<li><p>Abre la tarjeta microsd en tu computador y entra al archivo
+config.txt y modifica el parametro randomFeed, para el testeo de bateria
+pon el numero ‘99’ sin las comillas y guarda el archivo</p></li>
+<li><p>Carga el programa battery_test ocupando platformio, si estas
+desde la terminal ocupa el codigo ‘pio run -d
+~/fed_techical_check/scripts/testing/battery_test -t upload’
+asegurandone de tener el FED conectado y con la bateria</p></li>
+<li><p>Espera 24 horas para desconectar la bateria y remover la tarjeta
+microsd</p></li>
+<li><p>Realiza una copia del archivo [numero fed].CSV en tu
+escritorio</p></li>
+<li><p>Abre el script fed_batt_analysis.R y sigue las instrucciones que
+hay dentro</p></li>
+</ol>
+<div id="si-la-bateria-esta-por-debajo-de-la-capacidad-esperada" class="section level3">
+<h3>Si la bateria esta por debajo de la capacidad esperada</h3>
+<p>Marca la bateria indicando la fecha del test y el ultimo voltaje
+registrado.</p>
 </div>
 <div id="battery-is-at-or-above-expected-capacity" class="section level3">
 <h3>Battery is at or above expected capacity</h3>
+<p>Recarga la bateria para utilizarla posteriormente.</p>
 </div>
 </div>
 </div>
