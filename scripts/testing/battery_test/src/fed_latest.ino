@@ -67,8 +67,9 @@ void setup() {
 
 void loop() {
 	// battery test
-	if (config.randomfeed == 99){
+	if (config.randomFeed == 99){
 		  createHeaders();
+		  feed();
 		  readBatteryLevel();
 		  writeData();
 		  delay(1000);
