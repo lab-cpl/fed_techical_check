@@ -38,11 +38,27 @@ Recarga la bateria para utilizarla posteriormente.
 
 # Motor
 
-## Testing RPM or motor turns per seconds
+La revision del motor consiste en dejar andado el motor durante 1 hora a una cantidad de pasos constante. El programa registra cuanto tiempo se demora cada vez que realiza esa cantidad de pesos (100) y el script de analisis genera un histograma para observar si hay desviaciones de lo esperado.
 
-### Motor turns slower than expected
+## Testeando la velocidad de rotacion del motor
 
-### Motor turns at proper speed
+1. Abre la tarjeta microsd en tu computador y entra al archivo config.txt y modifica el parametro randomFeed, para el testeo de bateria pon el numero '100' sin las comillas  y guarda el archivo
+
+2. Carga el programa motor_test ocupando platformio, si estas desde la terminal ocupa el codigo 'pio run -d ~/fed_techical_check/scripts/testing/motor_test -t upload' asegurandone de tener el FED conectado y con la bateria
+
+3. Espera 1 hora para desconectar la bateria y remover la tarjeta microsd
+
+4. Realiza una copia del archivo [numero fed].CSV en tu escritorio
+
+5. Abre el script fed_motor_analysis.R y sigue las instrucciones que hay dentro
+
+### El motor gira mas lento o mas rapido de lo esperado
+
+Si las desviaciones son significativas (arriba de 15% sobre o por debajo de la moda), el motor debe ser etiquetado con mal funcionamiento y reemplazado.
+
+### El motor gira a la velocidad adecuada
+
+Limpia el motor ocupando un cepillo de diente asegurandote de remover la mayor cantidad de polvo o restos que tenga, recuerda realizar la limpieza del motor con el FED desconectado de la bateria.
 
 ## Checking M1 and M2 connectivity
 
@@ -53,13 +69,26 @@ Recarga la bateria para utilizarla posteriormente.
 ## Checking Feather M0 to motor shield power relay
 
 
-# Infrared sensor
+# Sensor infrarrojo
 
-## Checking sensor detection area
+El sensor infrarrojo es una de las piezas criticas del FED, ya que es la que determina si el pellet se entrego o no de forma exitosa. Para esto sin embargo solo se requiere de un programa 'sensor_test' que marca 0 cuando el sensor no esta detectando y 1 cuando si lo hace.
 
-### Sensor detection area is less than expected (or nonexistent)
+## Probando el area de deteccion
 
-### Sensor detection area is as expected
+Para probar esto simplemente se debe armar el FED tal como si se fuese a ocupar en un experimento y tomar un pellet con una pinza y lanzarlo en el comedero 100 veces. Cada vez que el pellet se aloje en el comedero el sensor debe registrar 1.
+
+1. Abrir y subir el programa 'sensor_test'
+2. Abrir el monitor del Arduino IDE, en este punto NO usaremos platformio
+3. Lanzar un pellet al comedero y observar si el monitor muestra '1'
+4. Anotar y repetir 100 veces
+
+### El area de deteccion del sensor es menos o distinto de lo esperado
+
+Marcar y cambiar el sensor
+
+### El sensor tiene el area de deteccion adecuada
+
+Desconectar el sensor y utilizando una torula con etanol limpiar todos los puntos de conexion, esperar que el etanol se evapore y volver a conectar
 
 ## Checking sensor digital signal
 

@@ -1538,13 +1538,39 @@ registrado.</p>
 </div>
 <div id="motor" class="section level1">
 <h1>Motor</h1>
-<div id="testing-rpm-or-motor-turns-per-seconds" class="section level2">
-<h2>Testing RPM or motor turns per seconds</h2>
-<div id="motor-turns-slower-than-expected" class="section level3">
-<h3>Motor turns slower than expected</h3>
+<p>La revision del motor consiste en dejar andado el motor durante 1
+hora a una cantidad de pasos constante. El programa registra cuanto
+tiempo se demora cada vez que realiza esa cantidad de pesos (100) y el
+script de analisis genera un histograma para observar si hay
+desviaciones de lo esperado.</p>
+<div id="testeando-la-velocidad-de-rotacion-del-motor" class="section level2">
+<h2>Testeando la velocidad de rotacion del motor</h2>
+<ol style="list-style-type: decimal">
+<li><p>Abre la tarjeta microsd en tu computador y entra al archivo
+config.txt y modifica el parametro randomFeed, para el testeo de bateria
+pon el numero ‘100’ sin las comillas y guarda el archivo</p></li>
+<li><p>Carga el programa motor_test ocupando platformio, si estas desde
+la terminal ocupa el codigo ‘pio run -d
+~/fed_techical_check/scripts/testing/motor_test -t upload’ asegurandone
+de tener el FED conectado y con la bateria</p></li>
+<li><p>Espera 1 hora para desconectar la bateria y remover la tarjeta
+microsd</p></li>
+<li><p>Realiza una copia del archivo [numero fed].CSV en tu
+escritorio</p></li>
+<li><p>Abre el script fed_motor_analysis.R y sigue las instrucciones que
+hay dentro</p></li>
+</ol>
+<div id="el-motor-gira-mas-lento-o-mas-rapido-de-lo-esperado" class="section level3">
+<h3>El motor gira mas lento o mas rapido de lo esperado</h3>
+<p>Si las desviaciones son significativas (arriba de 15% sobre o por
+debajo de la moda), el motor debe ser etiquetado con mal funcionamiento
+y reemplazado.</p>
 </div>
-<div id="motor-turns-at-proper-speed" class="section level3">
-<h3>Motor turns at proper speed</h3>
+<div id="el-motor-gira-a-la-velocidad-adecuada" class="section level3">
+<h3>El motor gira a la velocidad adecuada</h3>
+<p>Limpia el motor ocupando un cepillo de diente asegurandote de remover
+la mayor cantidad de polvo o restos que tenga, recuerda realizar la
+limpieza del motor con el FED desconectado de la bateria.</p>
 </div>
 </div>
 <div id="checking-m1-and-m2-connectivity" class="section level2">
@@ -1560,15 +1586,36 @@ registrado.</p>
 <h2>Checking Feather M0 to motor shield power relay</h2>
 </div>
 </div>
-<div id="infrared-sensor" class="section level1">
-<h1>Infrared sensor</h1>
-<div id="checking-sensor-detection-area" class="section level2">
-<h2>Checking sensor detection area</h2>
-<div id="sensor-detection-area-is-less-than-expected-or-nonexistent" class="section level3">
-<h3>Sensor detection area is less than expected (or nonexistent)</h3>
+<div id="sensor-infrarrojo" class="section level1">
+<h1>Sensor infrarrojo</h1>
+<p>El sensor infrarrojo es una de las piezas criticas del FED, ya que es
+la que determina si el pellet se entrego o no de forma exitosa. Para
+esto sin embargo solo se requiere de un programa ‘sensor_test’ que marca
+0 cuando el sensor no esta detectando y 1 cuando si lo hace.</p>
+<div id="probando-el-area-de-deteccion" class="section level2">
+<h2>Probando el area de deteccion</h2>
+<p>Para probar esto simplemente se debe armar el FED tal como si se
+fuese a ocupar en un experimento y tomar un pellet con una pinza y
+lanzarlo en el comedero 100 veces. Cada vez que el pellet se aloje en el
+comedero el sensor debe registrar 1.</p>
+<ol style="list-style-type: decimal">
+<li>Abrir y subir el programa ‘sensor_test’</li>
+<li>Abrir el monitor del Arduino IDE, en este punto NO usaremos
+platformio</li>
+<li>Lanzar un pellet al comedero y observar si el monitor muestra
+‘1’</li>
+<li>Anotar y repetir 100 veces</li>
+</ol>
+<div id="el-area-de-deteccion-del-sensor-es-menos-o-distinto-de-lo-esperado" class="section level3">
+<h3>El area de deteccion del sensor es menos o distinto de lo
+esperado</h3>
+<p>Marcar y cambiar el sensor</p>
 </div>
-<div id="sensor-detection-area-is-as-expected" class="section level3">
-<h3>Sensor detection area is as expected</h3>
+<div id="el-sensor-tiene-el-area-de-deteccion-adecuada" class="section level3">
+<h3>El sensor tiene el area de deteccion adecuada</h3>
+<p>Desconectar el sensor y utilizando una torula con etanol limpiar
+todos los puntos de conexion, esperar que el etanol se evapore y volver
+a conectar</p>
 </div>
 </div>
 <div id="checking-sensor-digital-signal" class="section level2">
