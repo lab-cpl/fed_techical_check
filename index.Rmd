@@ -118,27 +118,38 @@ Si luego de haber realizado el testeo del area del sensor, y realizado el proced
 
 ### La senal digital esta presente
 
+Si llegaste a este punto las partes electronicas del FED se encuentran funcionando de buena manera y solo te queda pasar a la seccion de revision de las piezas 3D.
+
+# Integridad de las piezas 3D
+
+Esta seccion involucra la inspeccion visual de cada una de las piezas teniendo como referente el STL. A continuacion se sugiere un orden de inspeccion y se deja una foto para su comparacion. Accede al link al lado de cada pieza para la visualizacion 3D.
+
+1. Housing. https://github.com/lab-cpl/fed_technical_check/blob/main/STL/FED3.1_Aug2021_Housing.stl
+2. SD door_audio https://github.com/lab-cpl/fed_technical_check/blob/main/STL/FED3.1_Aug2021_SDdoor_Audio.stl
+3. SD door_BNC https://github.com/lab-cpl/fed_technical_check/blob/main/STL/FED3.1_Aug2021_SDdoor_BNC.stl
+4. Disk https://github.com/lab-cpl/fed_technical_check/blob/main/STL/FED3.1_Nov2021_disk.stl
+5. Base https://github.com/lab-cpl/fed_technical_check/blob/main/STL/FED3_Base_June2021.stl
+6. Lid https://github.com/lab-cpl/fed_technical_check/blob/main/STL/FED3_Sept2020_lid.stl
+7. Nosepiece https://github.com/lab-cpl/fed_technical_check/blob/main/STL/FED3_nosepiece_recommended_to_print_this_in_steel.stl
+
+Si encuentras errores en alguna de las piezas descartala y vuelve a imprimirla.
+
+Si todas las piezas estan bien o ya has impreso aquellas que presentaba defectos pasa a la ultima seccion!
+
+# Test de estres para la entrega de pellets
+
+Este es el test mas simple de todos, ya que solo requiere que cargues el codigo mas actualizado del FED y remuevas el sensor. Para remover el sensor simplemente sacalo del encaja y procura que nada se meta entremedio de las dos patas negras, de esta manera el FED intentara entregar pellets continuamuente y estos iran cayendo. El procedimiento cuenta con los siguientes pasos:
+
+1. Carga el silo hasta el limite indicado con pellets
+2. Carga el programa del FED y dejalo correr de manera ininterrumpida hasta que caigan todos los pellets
+3. Anota en tu cuaderno cuantas veces se trabo la entrega de pellets y el tiempo aproximado que tardo en corregir la traba
 
 
+### El test de estres presenta problemas
 
-# 3D parts integrity
+Si el FED se traba constantemente (mas de 10 veces) o se traba pocas veces, pero por mucho tiempo (mas de 30 segundos) es posible que el disco (1) se encuentre mal posicionado o (2) presente defectos de impresion. Si al reposicionar o re-imprimir la pieza el error continua, prueba todas las piezas electronicas en otra impresion funcional del fed. Si al cambiar de piezas plasticas funciona, re-imprime todas las piezas, de lo contrario marca el FED (electronicos y piezas plasticas) como no funcionales.
 
-## Comparing 3D parts against original STL file
+### El test de estres va sin problemas
 
-### Parts are damaged or not similar to STL file
-
-### Parts are as expected
-
-See [Pellet delivery stress test](#Pelletdeliverystresstest)
-
-
-# Pellet delivery stress test {#Pelletdeliverystresstest}
-
-## Unloading full silo
-
-### Unloading presents errors
-
-### Unloading goes as expected
-
-FED is succesfuly tested, and present no errors.
+Felicidades el FED paso todas las pruebas y se encuentra listo para ser usado.
 
