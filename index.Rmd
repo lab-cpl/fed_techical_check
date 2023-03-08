@@ -54,19 +54,31 @@ La revision del motor consiste en dejar andado el motor durante 1 hora a una can
 
 ### El motor gira mas lento o mas rapido de lo esperado
 
-Si las desviaciones son significativas (arriba de 15% sobre o por debajo de la moda), el motor debe ser etiquetado con mal funcionamiento y reemplazado.
+Si las desviaciones son significativas (arriba de 15% sobre o por debajo de la moda), el motor debe ser etiquetado con mal funcionamiento y reemplazado. Si el motor no gira ve a la seccion [conectividad del motor](#conectividad-motor)
 
 ### El motor gira a la velocidad adecuada
 
 Limpia el motor ocupando un cepillo de diente asegurandote de remover la mayor cantidad de polvo o restos que tenga, recuerda realizar la limpieza del motor con el FED desconectado de la bateria.
 
-## Checking M1 and M2 connectivity
+## Revisando la conectividad del motor {#conectividad-motor}
 
-### Multimeter outputs no signal
+Si estas aca es porque el motor probablemente no gira o bien presenta moviemiento significativamente alterado. Esto es probablemente por problemas de conectividad entre el punto de conexion de los cables y la tierra o pin de voltaje.
 
-### Multimeter signals correct connectivity
+![conexion m0-m1](./images/m0_m1.png)
 
-## Checking Feather M0 to motor shield power relay
+Indicado en rojo son los dos cables que hacen puente y presentan la mayor cantidad de problemas. Lo que tendras que realizar es una prueba con el multimetro para asegurar que la soldadura este bien puesta o bien reemplazarla.
+
+El nombre tecnico para esto es probar la 'continuidad', para ello debes rotar la perilla del multimetro hasta el icono indicado en la imagen de abajo y colocar una punta de prueba en cada extremo del puente (no importa que color de punta de prueba ocupes para cada extremo, solo asegurate de probar el puente de manera cruzada). Si hay conectividad deberia sonar un pito.
+
+![multimetro](./images/multimeter.png)
+
+### El multimetro no emite un pito
+
+Si el multimetro no emite un pito, reemplaza el cable y vuelve a realizar la soldaduria del puente. Re-testea tu trabajo.
+
+### El multimetro emite el pito
+
+Esto probablemente indica que el motor esta malo y hay que descartarlo. Para asegurarte revisar que el motor no presente dano en sus cables y se encuentre correctamente conectado a las terminales.
 
 
 # Sensor infrarrojo
@@ -84,13 +96,16 @@ Para probar esto simplemente se debe armar el FED tal como si se fuese a ocupar 
 
 ### El area de deteccion del sensor es menos o distinto de lo esperado
 
-Marcar y cambiar el sensor
+1. Revisar el cable de senal, ir a [revisando cable de senal](#cable-senal)
+2. Marcar y cambiar el sensor
 
 ### El sensor tiene el area de deteccion adecuada
 
 Desconectar el sensor y utilizando una torula con etanol limpiar todos los puntos de conexion, esperar que el etanol se evapore y volver a conectar
 
-## Checking sensor digital signal
+## Revisando el cable de senal {#cable-senal}
+
+
 
 ### There is no digital signal present
 

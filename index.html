@@ -1373,23 +1373,17 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before {
-content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "";
-border: none;
-}
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "";
+content: "\e258";
 font-family: 'Glyphicons Halflings';
-display: inline-block;
-padding: 10px;
-border-right: 1px solid #ddd;
+border: none;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -1564,7 +1558,7 @@ hay dentro</p></li>
 <h3>El motor gira mas lento o mas rapido de lo esperado</h3>
 <p>Si las desviaciones son significativas (arriba de 15% sobre o por
 debajo de la moda), el motor debe ser etiquetado con mal funcionamiento
-y reemplazado.</p>
+y reemplazado. Si el motor no gira ve a la seccion <a href="#conectividad-motor">conectividad del motor</a></p>
 </div>
 <div id="el-motor-gira-a-la-velocidad-adecuada" class="section level3">
 <h3>El motor gira a la velocidad adecuada</h3>
@@ -1573,8 +1567,8 @@ la mayor cantidad de polvo o restos que tenga, recuerda realizar la
 limpieza del motor con el FED desconectado de la bateria.</p>
 </div>
 </div>
-<div id="checking-m1-and-m2-connectivity" class="section level2">
-<h2>Checking M1 and M2 connectivity</h2>
+<div id="conectividad-motor" class="section level2">
+<h2>Revisando la conectividad del motor</h2>
 <div id="multimeter-outputs-no-signal" class="section level3">
 <h3>Multimeter outputs no signal</h3>
 </div>
