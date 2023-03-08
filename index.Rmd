@@ -54,7 +54,7 @@ La revision del motor consiste en dejar andado el motor durante 1 hora a una can
 
 ### El motor gira mas lento o mas rapido de lo esperado
 
-Si las desviaciones son significativas (arriba de 15% sobre o por debajo de la moda), el motor debe ser etiquetado con mal funcionamiento y reemplazado. Si el motor no gira ve a la seccion [conectividad del motor](#conectividad-motor)
+Si las desviaciones son significativas (arriba de 15% sobre o por debajo de la moda), el motor debe ser etiquetado con mal funcionamiento y reemplazado. Si el motor no gira ve a la seccion [conectividad del motor](#conectividad-motor).
 
 ### El motor gira a la velocidad adecuada
 
@@ -105,23 +105,20 @@ Desconectar el sensor y utilizando una torula con etanol limpiar todos los punto
 
 ## Revisando el cable de senal {#cable-senal}
 
+El cable de senal es el encargado de entregar la senal digital al FED de si hay o no un pellet presente. En la imagen marcado con circulos rojos se indica donde deberia salir este cable. Para testear si se encuentra en buenas condiciones repite el procedimiento realiza el mismo procedimiento del multimetro [conectividad del motor](#conectividad-motor) entre el area superior marcada con el circulo rojo y el pin donde se encuentra soldado el cable.
+
+![cable senal](./images/pi.png)
 
 
-### There is no digital signal present
+### No hay senal digital presente
 
-See [Checking signal wire](#Checkingsignalwire)
+Si luego de haber realizado el testeo del area del sensor, y realizado el procedimiento con el multimetro (y soldado el area en caso de ser necesario) aun no se genera senal es posible que el pin del feather M0 o bien el motor shield este presentando problemas. Para revisar ese caso, prueba ese pin usando otro sensor. Si efectivamente el pin esta en malas condiciones, es necesario reemplazar el feather M0 o el motor shield. Si lo anterior no se encuentra dentro de las posibilidades puedes probar soldando el cable de senal a cualquier otro pin analogo y modificando el parametro de /src/headers.h
 
-### Digital signal output is as expected
+![headers-parameter](./images/headers.png)
 
-## Checking sensor resistance
+### La senal digital esta presente
 
-### Resistance is damaged or resistance lectures are not expected
 
-# Checking signal wire {#Checkingsignalwire}
-
-## Signal wire is unsoldered or damaged
-
-## Signal wire is properly connected, resolder or replaced
 
 
 # 3D parts integrity
